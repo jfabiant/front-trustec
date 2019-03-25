@@ -58,7 +58,7 @@
             >
           </td>
           <td>
-            <a href="#ondelete" class="icon" v-on:click="onDelete(product.idproducto)">Eliminar</a>
+            <button class="icon-button" v-on:click="onDelete(product.idproducto)">Eliminar</button>
           </td>
         </tr>
       </table>
@@ -112,6 +112,14 @@ export default {
       this.products = products;
     },
     async onSubmit(event) {
+      let date = new Date();
+      // Get date now
+      let hora = date.getHours();
+      let minute = date.getMinutes();
+      let second = date.getSeconds();
+
+      let dateNow = `${hora}${minute}${second}`;
+
       const resPostProducts = await axios({
         url: "http://localhost:3000/api/productos/productos",
         method: "POST",
@@ -130,6 +138,7 @@ export default {
       const URL = "http://localhost:3000/api/containers/container1/upload";
 
       let data = new FormData();
+
       data.append("name", "my-picture");
       data.append("file", event.target.files[0]);
 
@@ -164,3 +173,11 @@ export default {
   }
 };
 </script>
+<style>
+.icon-button {
+  background: red;
+  padding: 10px;
+  color: #fff;
+}
+</style>
+
