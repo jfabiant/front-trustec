@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Home titulo="MEVN" descripcion="2da prueba de MEVN"></Home>
+    <Opciones nombre="Agregar"></Opciones>
+    <Opciones nombre="Editar"></Opciones>
+    <Opciones nombre="Eliminar"></Opciones>
+    <Table></Table>
+    <!-- <UploadImagen titulo="Subir archivos con Vue.js"></UploadImagen> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import Home from "./components/Home.vue";
+import Table from "./components/Table.vue";
+import Opciones from "./components/Opciones.vue";
+import UploadImagen from "./components/UploadImagen.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    // HelloWorld,
+    Home,
+    Table,
+    Opciones,
+    UploadImagen
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: red;
+  color: #fff;
 }
 </style>
